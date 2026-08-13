@@ -15,23 +15,23 @@ Los turnos se solicitan directamente por WhatsApp: `https://wa.me/5493515920391`
 
 ```
 psicologa-marcela/
-├── vistas/
-│   ├── index.html        # Inicio
-│   ├── servicios.html    # Servicios
-│   └── contacto.html     # Contacto + privacidad
+├── index.html         # Inicio
+├── servicios.html     # Servicios
+├── contacto.html      # Contacto + privacidad
 ├── estilos/
 │   ├── base.css
 │   ├── componentes.css
 │   └── layout.css
-└── scripts-js/
-    └── main.js           # Menú móvil, tema, animaciones
+├── scripts-js/
+│   └── main.js        # Menú móvil, tema, animaciones
+└── vercel.json        # Clean URLs (/servicios, /contacto)
 ```
 
 ## Despliegue en Vercel
 
 1. Conectá el repositorio en [vercel.com](https://vercel.com).
-2. Framework preset: **Other** (o "Vite" no aplica).
-3. Build command: vacío. Output directory: `vistas` o vacío si servís desde la raíz.
+2. Framework preset: **Other**. Build command: vacío. Output directory: **raíz (vacío)**.
+3. El `vercel.json` habilita URLs limpias (`/servicios`, `/contacto`).
 
 ## Contacto
 

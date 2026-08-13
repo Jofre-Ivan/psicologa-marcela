@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Database
+datos.db
+datos.db-journal
+datos.db-shm
+datos.db-wal
+
+# Logs
+logs/
+*.log
+
+# Backups
+backups/
+*.gpg
+
+# Google credentials
+google-credentials.json
+google-token.json
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Build
+dist/
+build/

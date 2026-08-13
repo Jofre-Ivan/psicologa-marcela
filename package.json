@@ -1,0 +1,47 @@
+{
+  "name": "psicologa-marcela",
+  "version": "2.0.0",
+  "description": "Sitio web seguro para la Lic. Marcela Rolón - Psicología Clínica Gestalt. Sistema de turnos con pagos online (Mercado Pago + PayPal), verificación OTP y cumplimiento Ley 25.326.",
+  "main": "servidor/index.js",
+  "scripts": {
+    "start": "node servidor/index.js",
+    "dev": "NODE_ENV=development node servidor/index.js",
+    "backup": "bash scripts/backup.sh",
+    "audit": "npm audit && bash scripts/audit.sh",
+    "generate-key": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\""
+  },
+  "keywords": [
+    "psicologia",
+    "gestalt",
+    "turnos",
+    "pagos",
+    "seguridad"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "argon2": "^0.41.1",
+    "axios": "^1.7.9",
+    "better-sqlite3": "^11.3.0",
+    
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.5.1",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.2.0",
+    "googleapis": "^144.0.0",
+    "helmet": "^8.0.0",
+    "mercadopago": "^2.0.15",
+    "node-cron": "^3.0.3",
+    "otplib": "^12.0.1",
+    "qrcode": "^1.5.4",
+    "speakeasy": "^2.0.0",
+    "telegram-bot-api": "^2.0.1",
+    "twilio": "^5.3.0",
+    "uuid": "^10.0.0",
+    "winston": "^3.14.0"
+  }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reservá tu turno online con la Lic. Marcela Rolón.">
+    <title>Reservar Turno — Lic. Marcela Rolón</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/estilos/base.css">
+    <link rel="stylesheet" href="/estilos/componentes.css">
+    <link rel="stylesheet" href="/estilos/layout.css">
+    <link rel="stylesheet" href="/estilos/reserva.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="contenedor nav-interno">
+                        <a href="/" class="logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                    <defs>
+                        <linearGradient id="grad-logo" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#5a7d63"/>
+                            <stop offset="100%" stop-color="#c4a287"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="24" cy="24" r="21" fill="url(#grad-logo)" stroke="currentColor" stroke-width="1.5" opacity="0.12"/>
+                    <path d="M24 8.5 C15 8.5 8.5 15 8.5 24 C8.5 33 15 39.5 24 39.5 C33 39.5 39.5 33 39.5 24 C39.5 15 33 8.5 24 8.5 Z" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.18"/>
+                    <path d="M29.5 18.5 C30 19.8 29.8 21.2 29 22.3 C28.2 23.5 27 24 26 24 C25 24 24 23.8 23 23.5 C22 23.2 21 22.5 20.5 21.3 C20 20 20.5 18.5 21.5 17.5 C22.8 16.3 24.5 16.2 26 16.5 C27.3 16.7 28.5 17.5 29.5 18.5 Z" fill="currentColor" opacity="0.75"/>
+                    <path d="M17.5 28.5 C19 29 21 28 23 27.5 C25 27 27 27.5 28.5 28.5 C30 29.5 30.5 31 30 32.5 C29.5 34 28 34.5 26.5 34.5 C25 34.5 23.5 34 22 33.5 C20.5 33 19 32.5 17.5 31.5 C16 30.5 15.5 29.5 16 28.5 C16.5 27.5 17 27.5 17.5 28.5 Z" fill="currentColor" opacity="0.85"/>
+                    <circle cx="24" cy="24" r="2.2" fill="white" opacity="0.9"/>
+                </svg>
+                Marcela <span>Rolón</span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="/">Inicio</a>
+                <a href="/servicios">Servicios</a>
+                <a href="/reservar" class="activo">Reservar Turno</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="seccion pagina-titulo">
+            <div class="contenedor texto-centrado">
+                <h1 class="revelar">Reservar un turno</h1>
+                <p class="revelar">Completá los pasos para reservar tu sesión online.</p>
+            </div>
+        </section>
+
+        <section class="seccion">
+            <div class="contenedor">
+                <div class="pasos-navegacion" id="pasos-navegacion">
+                    <div class="paso activo" data-paso="1"><span>1</span> Cobertura</div>
+                    <div class="paso" data-paso="2"><span>2</span> Fecha</div>
+                    <div class="paso" data-paso="3"><span>3</span> Horario</div>
+                    <div class="paso" data-paso="4"><span>4</span> Tus datos</div>
+                    <div class="paso" data-paso="5"><span>5</span> Pago</div>
+                </div>
+
+                <div class="reserva-contenido">
+                    <!-- Paso 1: Cobertura -->
+                    <div id="paso-1" class="paso-contenido">
+                        <h2 class="texto-centrado">¿Tenés cobertura médica?</h2>
+                        <div class="coberturas-opciones">
+                            <button type="button" class="cobertura-opcion" data-tipo="apross">
+                                <span class="cobertura-icono">🏥</span>
+                                <span class="cobertura-nombre">Sí, tengo Apross</span>
+                                <span class="cobertura-desc">Coseguro</span>
+                            </button>
+                            <button type="button" class="cobertura-opcion" data-tipo="particular">
+                                <span class="cobertura-icono">👤</span>
+                                <span class="cobertura-nombre">No, soy particular</span>
+                                <span class="cobertura-desc">Pago completo</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2: Fecha -->
+                    <div id="paso-2" class="paso-contenido oculto">
+                        <h2 class="texto-centrado">Elegí un día</h2>
+                        <div id="calendario" class="calendario"></div>
+                        <p class="texto-centrado mt-2">
+                            <small class="texto-suave">Lunes a Viernes de 8:00 a 21:00</small>
+                        </p>
+                    </div>
+
+                    <!-- Paso 3: Horario -->
+                    <div id="paso-3" class="paso-contenido oculto">
+                        <h2 class="texto-centrado">Elegí un horario</h2>
+                        <p id="fecha-elegida" class="texto-centrado"></p>
+                        <div id="horarios" class="horarios-grid"></div>
+                    </div>
+
+                    <!-- Paso 4: Datos -->
+                    <div id="paso-4" class="paso-contenido oculto">
+                        <h2 class="texto-centrado">Tus datos</h2>
+                        <p class="texto-centrado texto-suave">Completá tus datos para el turno.</p>
+
+                        <form id="form-datos" class="form-turno">
+                            <div class="campo">
+                                <label for="nombre">Nombre completo *</label>
+                                <input type="text" id="nombre" required minlength="2" maxlength="100" autocomplete="name">
+                            </div>
+                            <div class="campo">
+                                <label for="dni">DNI (solo números) *</label>
+                                <input type="text" id="dni" required pattern="[0-9]{7,8}" maxlength="8" placeholder="12345678">
+                            </div>
+                            <div class="campo">
+                                <label for="telefono">Teléfono (con código de área) *</label>
+                                <input type="tel" id="telefono" required pattern="\+?[0-9\s-]{10,18}" placeholder="3515920391" autocomplete="tel">
+                            </div>
+                            <div class="campo">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" autocomplete="email">
+                            </div>
+
+                            <div class="campo">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="consentimiento" required>
+                                    Acepto la <a href="/contacto#privacidad" target="_blank">política de privacidad</a> *
+                                </label>
+                            </div>
+
+                            <button type="submit" class="boton boton-primario">Continuar al pago</button>
+                        </form>
+                        <div id="mensaje-datos"></div>
+                    </div>
+
+                    <!-- Paso 5: Pago -->
+                    <div id="paso-5" class="paso-contenido oculto texto-centrado">
+                        <h2>Pago seguro</h2>
+                        <p class="texto-suave">Serás redirigido a la plataforma de pago.</p>
+                        <div class="metodos-pago">
+                            <button class="boton boton-pago" id="btn-mercadopago">
+                                <span class="pago-icono">💳</span>
+                                <span>Mercado Pago</span>
+                            </button>
+                            <button class="boton boton-pago" id="btn-paypal">
+                                <span class="pago-icono">🅿️</span>
+                                <span>PayPal</span>
+                            </button>
+                        </div>
+                        <div id="mensaje-pago"></div>
+                    </div>
+
+                    <!-- Éxito -->
+                    <div id="paso-ok" class="paso-contenido oculto texto-centrado">
+                        <div class="icono-exito">✓</div>
+                        <h2>¡Turno reservado!</h2>
+                        <p>Te enviamos un WhatsApp con la confirmación.</p>
+                        <a href="/" class="boton boton-secundario mt-2">Volver al inicio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="contenedor">
+            <p>© 2024 Lic. Marcela Rolón · Psicóloga Clínica Gestalt · Mat. 3240</p>
+            <p class="texto-suave">Atención online · Córdoba, Argentina</p>
+        </div>
+    </footer>
+
+    <script src="/scripts-js/main.js"></script>
+    <script src="/scripts-js/reserva.js"></script>
+</body>
+</html>

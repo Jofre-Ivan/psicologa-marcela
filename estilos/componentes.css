@@ -347,60 +347,107 @@ body.menu-abierto .menu-toggle span:nth-child(3) {
   margin-bottom: var(--espacio-5);
 }
 
-.cabecera-seccion .intro-seccion {
-  max-width: 36ch;
-  color: var(--color-texto-suave);
-  font-size: 1.06rem;
-  margin: 0;
-}
-
 .cabecera-centrada {
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.cabecera-centrada .intro-seccion {
-  margin-inline: auto;
+/* Enfoque — índice editorial */
+.enfoque-cabecera {
+  max-width: 34ch;
+  margin-bottom: var(--espacio-6);
 }
 
-.filosofia {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0 48px;
-}
-
-.filosofia-item {
-  border-top: 1px solid var(--color-borde);
-  padding-top: var(--espacio-4);
-}
-
-.filosofia-icono {
-  display: inline-grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background-color: var(--color-primario-claro);
-  color: var(--color-primario);
+.enfoque-cabecera h2 {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  line-height: 1.05;
   margin-bottom: var(--espacio-3);
 }
 
-.filosofia-icono svg {
-  width: 22px;
-  height: 22px;
+.enfoque-cabecera::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1px;
+  background-color: var(--color-acento);
+  margin-top: var(--espacio-4);
 }
 
-.filosofia-item h3 {
-  font-size: 1.45rem;
-  margin-bottom: 0.5rem;
-}
-
-.filosofia-item p {
+.enfoque-intro {
   color: var(--color-texto-suave);
-  font-size: 0.98rem;
-  max-width: 34ch;
+  font-size: 1.08rem;
+  line-height: 1.8;
   margin: 0;
+}
+
+.enfoque-lista {
+  list-style: none;
+  margin: 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+.enfoque-item {
+  display: grid;
+  grid-template-columns: clamp(92px, 11vw, 136px) minmax(0, 1fr) minmax(0, 48px);
+  gap: var(--espacio-4);
+  align-items: start;
+  padding: var(--espacio-5) var(--espacio-2) var(--espacio-5) 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.enfoque-numero {
+  font-family: var(--fuente-titulos);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 0.9;
+  font-weight: 500;
+  color: var(--color-acento);
+  font-variant-numeric: tabular-nums;
+  transition: color 0.35s var(--ease-suave), transform 0.35s var(--ease-salida);
+}
+
+.enfoque-cuerpo h3 {
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.enfoque-cuerpo p {
+  color: var(--color-texto-suave);
+  max-width: 52ch;
+  margin: 0;
+}
+
+.enfoque-icono {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-borde);
+  border-radius: 50%;
+  color: var(--color-primario);
+  justify-self: end;
+  margin-top: 6px;
+  transition: border-color 0.35s var(--ease-suave),
+    color 0.35s var(--ease-suave),
+    transform 0.35s var(--ease-salida);
+}
+
+.enfoque-icono svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (hover: hover) {
+  .enfoque-item:hover .enfoque-numero {
+    color: var(--color-primario);
+    transform: translateX(6px);
+  }
+
+  .enfoque-item:hover .enfoque-icono {
+    border-color: color-mix(in srgb, var(--color-primario) 40%, var(--color-borde));
+    transform: translateY(-2px);
+  }
 }
 
 .pasos {
@@ -445,10 +492,35 @@ body.menu-abierto .menu-toggle span:nth-child(3) {
     gap: var(--espacio-3);
   }
 
-  .filosofia,
+  .enfoque-cabecera {
+    max-width: none;
+    margin-bottom: var(--espacio-5);
+  }
+
+  .enfoque-item {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: var(--espacio-3);
+    padding: var(--espacio-4) 0;
+  }
+
+  .enfoque-numero {
+    font-size: 2.1rem;
+  }
+
+  .enfoque-icono {
+    display: none;
+  }
+
   .pasos {
     grid-template-columns: 1fr;
     gap: var(--espacio-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enfoque-numero,
+  .enfoque-icono {
+    transition: none;
   }
 }
 

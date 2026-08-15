@@ -1,376 +1,207 @@
-/* Layout */
+/* ============================================================
+   layout.css — Composición de páginas interiores
+   ============================================================ */
 
-/* Coberturas */
-.coberturas-opciones {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 400px;
-  margin: 0 auto;
+/* Título de páginas interiores (izquierda, editorial) */
+.pagina-titulo {
+  padding-top: calc(var(--nav-alto) + 56px);
+  padding-bottom: 40px;
 }
 
-.cobertura-opcion {
+.pagina-titulo h1 {
+  margin-bottom: var(--espacio-2);
+}
+
+.pagina-titulo .intro {
+  color: var(--color-texto-suave);
+  font-size: 1.12rem;
+  max-width: 52ch;
+  margin: 0;
+}
+
+/* Servicios: asimetría 1.55 / 1 */
+.servicio-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: var(--espacio-6);
+  align-items: start;
+}
+
+.servicio-info h2 {
+  margin-bottom: var(--espacio-3);
+}
+
+.servicio-info > p {
+  color: var(--color-texto-suave);
+  max-width: 56ch;
+}
+
+.servicio-lista {
+  list-style: none;
+  margin-top: var(--espacio-4);
+  border-top: 1px solid var(--color-borde);
+}
+
+.servicio-lista li {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 24px;
-  background-color: var(--color-fondo);
-  border: 2px solid var(--color-borde);
+  justify-content: space-between;
+  gap: var(--espacio-3);
+  padding: var(--espacio-2) 0;
+  border-bottom: 1px solid var(--color-borde);
+  font-size: 0.98rem;
+}
+
+.servicio-lista .clave {
+  color: var(--color-texto-suave);
+}
+
+.servicio-lista .valor {
+  font-weight: 500;
+  text-align: right;
+}
+
+.cobertura {
+  position: sticky;
+  top: calc(var(--nav-alto) + 32px);
+  padding: var(--espacio-4);
+  background-color: var(--color-fondo-alt);
+  border: 1px solid var(--color-borde);
   border-radius: var(--radio);
-  cursor: pointer;
-  transition: var(--transicion);
-  font-family: var(--fuente-cuerpo);
-  color: var(--color-texto);
 }
 
-.cobertura-opcion:hover {
-  border-color: var(--color-primario);
-  background-color: var(--color-primario-claro);
+.cobertura .etiqueta {
+  margin-bottom: 0.75rem;
 }
 
-.cobertura-icono {
-  font-size: 2rem;
+.cobertura h3 {
+  font-size: 1.6rem;
+  margin-bottom: var(--espacio-3);
+}
+
+.cobertura-items {
+  display: grid;
+  gap: var(--espacio-2);
+  margin-bottom: var(--espacio-4);
+}
+
+.cobertura-item {
+  display: flex;
+  gap: var(--espacio-2);
+  align-items: flex-start;
+}
+
+.cobertura-item svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-primario);
+  margin-top: 3px;
+  flex-shrink: 0;
 }
 
 .cobertura-nombre {
-  font-weight: 500;
-  font-size: 1.1rem;
   display: block;
+  font-weight: 600;
 }
 
 .cobertura-desc {
-  font-size: 0.85rem;
   color: var(--color-texto-suave);
-  display: block;
-}
-
-.campo {
-  margin-bottom: 1.25rem;
-}
-
-.campo label {
-  display: block;
   font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 6px;
-  color: var(--color-texto);
 }
 
-.campo input,
-.campo textarea {
+.cobertura .boton {
   width: 100%;
-  padding: 12px 16px;
-  font-family: var(--fuente-cuerpo);
-  font-size: 1rem;
-  background-color: var(--color-fondo);
-  border: 1px solid var(--color-borde);
-  border-radius: var(--radio-sm);
-  color: var(--color-texto);
-  transition: var(--transicion);
 }
 
-.campo input:focus,
-.campo textarea:focus {
-  outline: none;
-  border-color: var(--color-primario);
-  box-shadow: 0 0 0 3px var(--color-primario-claro);
-}
-
-.checkbox-label {
-  display: flex !important;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 0.85rem !important;
-  cursor: pointer;
-}
-
-.checkbox-label input {
-  width: auto !important;
-  margin-top: 4px;
-}
-
-.mensaje {
-  padding: 12px 16px;
-  border-radius: var(--radio-sm);
-  font-size: 0.9rem;
-  margin-top: 1rem;
-}
-
-.mensaje-exito {
-  background-color: var(--color-primario-claro);
-  color: var(--color-primario-oscuro);
-  border: 1px solid var(--color-primario);
-}
-
-.mensaje-error {
-  background-color: rgba(196, 97, 97, 0.12);
-  color: var(--color-peligro);
-  border: 1px solid var(--color-peligro);
-}
-
-[data-theme="dark"] .mensaje-error {
-  background-color: rgba(212, 132, 132, 0.12);
-}
-
-.oculto {
-  display: none !important;
-}
-
-/* Servicios */
-.servicios-opciones {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.servicio-opcion {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
-  background-color: var(--color-fondo);
-  border: 2px solid var(--color-borde);
-  border-radius: var(--radio);
-  cursor: pointer;
-  transition: var(--transicion);
-  font-family: var(--fuente-cuerpo);
-  font-size: 1rem;
-  color: var(--color-texto);
-}
-
-.servicio-opcion:hover {
-  border-color: var(--color-primario);
-  background-color: var(--color-primario-claro);
-}
-
-.servicio-opcion .nombre {
-  font-weight: 500;
-  font-size: 1.1rem;
-}
-
-.servicio-opcion .detalle {
-  font-size: 0.85rem;
-  color: var(--color-texto-suave);
-}
-
-/* Calendario */
-.calendario {
+/* Contacto: asimetría 1.4 / 1 */
+.contacto-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
-  max-width: 400px;
-  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--espacio-6);
+  align-items: start;
 }
 
-.calendario-header {
-  text-align: center;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-texto-suave);
-  padding: 8px 0;
-}
-
-.calendario-dia {
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radio-sm);
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: var(--transicion);
-  background-color: var(--color-fondo-alt);
-}
-
-.calendario-dia.vacio {
-  background: none;
-  cursor: default;
-}
-
-.calendario-dia.pasado,
-.calendario-dia.sin-horarios {
-  color: var(--color-texto-suave);
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.calendario-dia:not(.pasado):not(.sin-horarios):not(.vacio):hover {
-  background-color: var(--color-primario-claro);
-}
-
-.calendario-dia.seleccionado {
-  background-color: var(--color-primario) !important;
-  color: white !important;
-}
-
-/* Horarios */
-.horarios-grid {
+.contacto-principal {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 12px;
-  max-width: 500px;
-  margin: 0 auto;
+  gap: var(--espacio-5);
 }
 
-.horario {
-  padding: 14px 20px;
-  background-color: var(--color-fondo-alt);
-  border: 2px solid var(--color-borde);
-  border-radius: var(--radio-sm);
-  cursor: pointer;
-  font-size: 1rem;
-  font-family: var(--fuente-cuerpo);
-  transition: var(--transicion);
+.contacto-item {
+  border-top: 1px solid var(--color-borde);
+  padding-top: var(--espacio-4);
 }
 
-.horario:hover {
-  border-color: var(--color-primario);
-  background-color: var(--color-primario-claro);
-}
-
-.horario.seleccionado {
-  background-color: var(--color-primario);
-  color: white;
-  border-color: var(--color-primario);
-}
-
-/* Form */
-.form-turno {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.otp-container {
-  display: flex;
-  gap: 8px;
-}
-
-.otp-container input {
-  flex: 1;
-}
-
-.turnstile-container {
-  margin: 1rem 0;
-  min-height: 65px;
-}
-
-.metodos-pago {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-.icono-exito {
-  width: 80px;
-  height: 80px;
+.contacto-icono {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: var(--color-primario);
-  color: white;
-  font-size: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 2rem;
-}
-
-.resumen {
   background-color: var(--color-primario-claro);
-  padding: 24px;
-  border-radius: var(--radio);
-  margin-top: 1.5rem;
-  text-align: left;
+  color: var(--color-primario);
+  margin-bottom: var(--espacio-2);
 }
 
-.pasos-navegacion {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
+.contacto-icono svg {
+  width: 24px;
+  height: 24px;
 }
 
-.pasos-navegacion .paso {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+.contacto-item h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.contacto-item p {
   color: var(--color-texto-suave);
-  font-size: 0.8rem;
+  max-width: 46ch;
 }
 
-.pasos-navegacion .paso span {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background-color: var(--color-borde);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.contacto-item .boton {
+  margin-top: var(--espacio-2);
+}
+
+.contacto-perfil h3 {
+  font-size: 1.55rem;
+  margin-bottom: var(--espacio-2);
+}
+
+.contacto-perfil p {
+  color: var(--color-texto-suave);
+  margin-bottom: 0.35rem;
+}
+
+.contacto-perfil p strong {
+  color: var(--color-texto);
   font-weight: 600;
-  font-size: 0.8rem;
 }
 
-.pasos-navegacion .paso.activo span {
-  background-color: var(--color-primario);
-  color: white;
+/* Política de privacidad */
+.privacidad-texto {
+  max-width: 64ch;
+  margin: 0 auto;
 }
 
-.pasos-navegacion .paso.hecho span {
-  background-color: var(--color-exito);
-  color: white;
+.privacidad-texto p {
+  color: var(--color-texto-suave);
+}
+
+.privacidad-texto p strong {
+  color: var(--color-texto);
 }
 
 @media (max-width: 768px) {
-  .pasos-navegacion {
-    gap: 12px;
+  .pagina-titulo {
+    padding-top: calc(var(--nav-alto) + 40px);
+    padding-bottom: 32px;
   }
 
-  .pasos-navegacion .paso {
-    font-size: 0.7rem;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .cobertura-opcion,
-  .servicio-opcion,
-  .resumen,
-  .form-turno,
-  .horarios-grid,
-  .pasos-navegacion {
-    width: min(100%, 100%);
-  }
-
-  .cobertura-opcion,
-  .servicio-opcion,
-  .horario,
-  .tarjeta {
-    padding: 18px 20px;
-  }
-
-  .calendario {
-    grid-template-columns: repeat(7, minmax(36px, 1fr));
-    gap: 6px;
-    max-width: 100%;
-  }
-
-  .calendario-dia {
-    font-size: 0.82rem;
-    padding: 10px 0;
-  }
-
-  .horarios-grid {
+  .servicio-grid,
+  .contacto-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: var(--espacio-4);
   }
 
-  .metodos-pago {
-    gap: 16px;
-  }
-
-  .resumen {
-    padding: 20px;
+  .cobertura {
+    position: static;
   }
 }

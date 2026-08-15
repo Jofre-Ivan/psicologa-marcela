@@ -1,4 +1,10 @@
+/* ============================================================
+   base.css — Tokens de diseño y base tipográfica
+   Paleta: verde musgo (#5a7d63), arena (#c4a287), crema (#faf8f5)
+   ============================================================ */
+
 :root {
+  /* Paleta */
   --color-fondo: #faf8f5;
   --color-fondo-alt: #f3f0ea;
   --color-texto: #2d2a26;
@@ -14,15 +20,36 @@
   --color-whatsapp: #25d366;
   --color-whatsapp-oscuro: #1da851;
 
-  --fuente-titulos: 'Cormorant Garamond', Georgia, serif;
-  --fuente-cuerpo: 'Inter', -apple-system, sans-serif;
+  /* Tipografía */
+  --fuente-titulos: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --fuente-cuerpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --radio: 12px;
-  --radio-sm: 8px;
-  --sombra: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --sombra-hover: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --transicion: all 0.3s ease;
+  /* Espaciado — escala de 8px */
+  --espacio-1: 8px;
+  --espacio-2: 16px;
+  --espacio-3: 24px;
+  --espacio-4: 32px;
+  --espacio-5: 48px;
+  --espacio-6: 64px;
+  --espacio-7: 96px;
 
+  /* Forma y profundidad */
+  --radio: 14px;
+  --radio-sm: 10px;
+  --sombra: 0 1px 2px rgba(45, 42, 38, 0.04), 0 10px 28px rgba(45, 42, 38, 0.07);
+  --sombra-hover: 0 2px 4px rgba(45, 42, 38, 0.05), 0 16px 36px rgba(45, 42, 38, 0.11);
+
+  /* Movimiento */
+  --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-suave: cubic-bezier(0.22, 1, 0.36, 1);
+  --transicion: background-color 0.25s var(--ease-suave),
+    border-color 0.25s var(--ease-suave),
+    color 0.25s var(--ease-suave),
+    box-shadow 0.25s var(--ease-suave),
+    opacity 0.25s var(--ease-suave),
+    transform 0.25s var(--ease-suave);
+
+  /* Contenedores */
   --max-ancho: 1100px;
   --nav-alto: 72px;
 }
@@ -49,29 +76,56 @@
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
   font-family: var(--fuente-cuerpo);
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: 16px;
   min-height: 100dvh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--fuente-titulos);
   font-weight: 500;
+  color: var(--color-texto);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.4rem;
   line-height: 1.3;
 }
 
-h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
-h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
-h3 { font-size: 1.4rem; }
-
-p { margin-bottom: 1rem; }
+p {
+  margin-bottom: 1rem;
+  text-wrap: pretty;
+}
 
 a {
   color: var(--color-primario);
@@ -79,9 +133,18 @@ a {
   transition: var(--transicion);
 }
 
-a:hover { color: var(--color-primario-oscuro); }
+a:hover {
+  color: var(--color-primario-oscuro);
+}
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 3px;
+}
 
 .contenedor {
   width: 100%;
@@ -90,45 +153,180 @@ em { font-style: italic; }
   padding: 0 24px;
 }
 
-.seccion { padding: 80px 0; }
+.seccion {
+  padding: var(--espacio-7) 0;
+}
 
-.seccion-destacada { background-color: var(--color-primario-claro); }
+.seccion-destacada {
+  background-color: var(--color-primario-claro);
+}
 
-.texto-centrado { text-align: center; }
-.texto-suave { color: var(--color-texto-suave); }
-.negrita { font-weight: 600; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
+.texto-centrado {
+  text-align: center;
+}
+
+.texto-suave {
+  color: var(--color-texto-suave);
+}
+
+.negrita {
+  font-weight: 600;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
 
 .etiqueta {
-  font-size: 0.85rem;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.78rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.16em;
   color: var(--color-primario);
   margin-bottom: 1rem;
 }
 
-.revelar {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+/* Enlace para saltar al contenido (accesibilidad) */
+.skip-link {
+  position: fixed;
+  top: -999px;
+  left: 16px;
+  z-index: 2000;
+  background-color: var(--color-primario);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  box-shadow: var(--sombra-hover);
+  transition: top 0.2s var(--ease-suave);
 }
 
-.revelar.visible {
+.skip-link:focus-visible {
+  top: 16px;
+  color: #fff;
+}
+
+/* Anclas con navbar fija */
+[id] {
+  scroll-margin-top: calc(var(--nav-alto) + 24px);
+}
+
+/* ============================================================
+   Sistema de reveal
+   Por defecto el contenido es visible; el estado oculto se
+   activa únicamente cuando hay JS (clase .js en <html>).
+   ============================================================ */
+
+.revelar {
+  transition: opacity 0.7s var(--ease-salida) var(--demora, 0s),
+    transform 0.7s var(--ease-salida) var(--demora, 0s);
+}
+
+.js .revelar {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.js .revelar.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.pagina-titulo {
-  padding-top: 100px;
-  padding-bottom: 40px;
+/* Entrada del hero: desvanecido + traslación con stagger */
+.js .hero-entrada {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s var(--ease-salida) var(--demora, 0s),
+    transform 0.8s var(--ease-salida) var(--demora, 0s);
+}
+
+.js .hero-entrada.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* El emblema entra con escala y desenfoque sutil (momento focal) */
+.js .hero-emblem {
+  transform: translateY(18px) scale(0.94);
+  filter: blur(8px);
+  transition: opacity 1s var(--ease-salida) var(--demora, 0s),
+    transform 1.1s var(--ease-salida) var(--demora, 0s),
+    filter 1.1s var(--ease-salida) var(--demora, 0s);
+}
+
+.js .hero-emblem.visible {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* Split tipográfico del título del hero */
+.js .palabra {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.js .palabra-inner {
+  display: inline-block;
+  transform: translateY(115%);
+  transition: transform 0.9s var(--ease-salida);
+}
+
+.js .hero-split.visible .palabra-inner {
+  transform: translateY(0);
+}
+
+/* Accesibilidad: respeto total al movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .revelar,
+  .js .hero-entrada,
+  .js .hero-emblem {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .js .palabra-inner {
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 768px) {
-  .seccion { padding: 60px 0; }
-  .pagina-titulo { padding-top: 80px; }
+  .seccion {
+    padding: var(--espacio-6) 0;
+  }
+
+  .pagina-titulo {
+    padding-top: calc(var(--nav-alto) + 40px);
+  }
 }

@@ -7,6 +7,7 @@
       name="description"
       content="Lic. Marcela Rolón - Psicóloga Clínica Gestalt. Atención online. Matrícula 3204. Reservá tu turno."
     />
+    <meta name="theme-color" content="#faf8f5" />
     <title>Lic. Marcela Rolón | Psicología Clínica Gestalt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,68 +18,25 @@
     <link rel="stylesheet" href="/estilos/base.css" />
     <link rel="stylesheet" href="/estilos/componentes.css" />
     <link rel="stylesheet" href="/estilos/layout.css" />
+    <link rel="icon" type="image/png" href="/logo.png" />
   </head>
 
   <body>
-    <nav class="navbar">
-      <img
-        src="logo.png"
-        alt="Marcela Rolón- Psicóloga Clínica"
-        class="navbar-logo"
-      />
-    </nav>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
     <header class="navbar">
       <div class="contenedor nav-interno">
-        <a href="/" class="logo" aria-label="Marcela Rolón">
-          <svg
-            viewBox="0 0 80 80"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            role="img"
-          >
-            <defs>
-              <linearGradient
-                id="grad-initials"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stop-color="#5a7d63" />
-                <stop offset="100%" stop-color="#c4a287" />
-              </linearGradient>
-            </defs>
-            <rect
-              width="80"
-              height="80"
-              rx="16"
-              fill="url(#grad-initials)"
-              opacity="0.08"
-            />
-            <g
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1"
-              opacity="0.12"
-            >
-              <rect x="6" y="6" width="68" height="68" rx="12" />
-            </g>
-            <text
-              x="50%"
-              y="52%"
-              text-anchor="middle"
-              font-family="Cormorant Garamond, Georgia, serif"
-              font-size="28"
-              font-weight="600"
-              fill="currentColor"
-            >
-              MR
-            </text>
-          </svg>
-          Marcela <span>Rolón</span>
+        <a href="/" class="logo" aria-label="Marcela Rolón — Psicóloga Clínica">
+          <img
+            src="/logo.png"
+            alt="Marcela Rolón — Psicóloga Clínica"
+            width="1024"
+            height="1024"
+            class="navbar-logo"
+          />
         </a>
-        <nav class="nav-links" id="nav-links">
-          <a href="/">Inicio</a>
+        <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+          <a href="/" class="activo" aria-current="page">Inicio</a>
           <a href="/servicios">Servicios</a>
           <a href="/contacto">Contacto</a>
         </nav>
@@ -86,31 +44,34 @@
           type="button"
           class="menu-toggle"
           id="menu-toggle"
-          aria-label="Menú"
+          aria-label="Abrir menú"
           aria-expanded="false"
+          aria-controls="nav-links"
         >
           <span></span><span></span><span></span>
         </button>
       </div>
     </header>
 
-    <main>
+    <main id="contenido" tabindex="-1">
       <section class="hero">
         <div class="contenedor hero-container">
-          <div class="hero-texto revelar">
-            <p class="etiqueta">Psicología Clínica Gestalt · Mat. 3204</p>
-            <h1>Un espacio para<br /><em>encontrarte</em></h1>
-            <p class="hero-descripcion">
+          <div class="hero-texto">
+            <p class="etiqueta hero-entrada">Psicología Clínica Gestalt · Mat. 3204</p>
+            <h1 class="hero-split">
+              Un espacio para<br /><em>encontrarte</em>
+            </h1>
+            <p class="hero-descripcion hero-entrada">
               Acompañamiento terapéutico online desde la perspectiva Gestalt. Un
               enfoque centrado en el aquí y ahora, en la conciencia de tus
               emociones y en la relación con tu entorno.
             </p>
-            <div class="hero-acciones">
+            <div class="hero-acciones hero-entrada">
               <a
                 href="https://wa.me/5493515920391?text=Hola%20Marcela%2C%20quiero%20solicitar%20un%20turno."
                 class="boton boton-primario"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 >Solicitar turno por WhatsApp</a
               >
               <a href="/servicios" class="boton boton-secundario"
@@ -118,120 +79,41 @@
               >
             </div>
           </div>
-          <div class="hero-icono revelar">
-            <div class="hero-emblema">
-              <svg
-                viewBox="0 0 200 200"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                role="img"
-              >
-                <defs>
-                  <linearGradient
-                    id="grad-hero"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stop-color="#5a7d63" />
-                    <stop offset="100%" stop-color="#c4a287" />
-                  </linearGradient>
-                </defs>
-                <g opacity="0.06">
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="92"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1"
-                  />
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="76"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1"
-                  />
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="60"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1"
-                  />
-                </g>
-                <circle
-                  cx="100"
-                  cy="100"
-                  r="44"
-                  fill="url(#grad-hero)"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M88 118 C92 114 96 110 100 110 C104 110 108 114 112 118"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0.9"
-                />
-                <path
-                  d="M82 98 C86 94 92 92 100 92 C108 92 114 94 118 98"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  opacity="0.8"
-                />
-                <text
-                  x="100"
-                  y="92"
-                  text-anchor="middle"
-                  font-family="Cormorant Garamond, Georgia, serif"
-                  font-size="22"
-                  font-weight="700"
-                  fill="white"
-                  opacity="0.92"
-                >
-                  M
-                </text>
-                <text
-                  x="100"
-                  y="116"
-                  text-anchor="middle"
-                  font-family="Cormorant Garamond, Georgia, serif"
-                  font-size="22"
-                  font-weight="700"
-                  fill="white"
-                  opacity="0.92"
-                >
-                  R
-                </text>
-                <circle cx="100" cy="100" r="2.4" fill="white" opacity="0.85" />
-              </svg>
+          <div class="hero-icono hero-entrada hero-emblem">
+            <div class="hero-emblema" aria-hidden="true">
+              <img
+                src="/logo.png"
+                alt=""
+                width="1024"
+                height="1024"
+                class="hero-logo"
+                loading="eager"
+                fetchpriority="high"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section class="seccion">
+      <section class="seccion" id="enfoque">
         <div class="contenedor">
-          <h2 class="texto-centrado revelar">Sobre el enfoque</h2>
-          <div class="grilla grilla-3 mt-3">
-            <div class="tarjeta revelar">
-              <div class="tarjeta-icono">
+          <div class="cabecera-seccion">
+            <div>
+              <p class="etiqueta">El enfoque</p>
+              <h2>Sobre el enfoque</h2>
+            </div>
+            <p class="intro-seccion">
+              Tres principios de la terapia Gestalt que atraviesan cada encuentro.
+            </p>
+          </div>
+          <div class="filosofia" data-stagger>
+            <article class="filosofia-item revelar">
+              <span class="filosofia-icono">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
-                  role="img"
                 >
                   <circle
                     cx="12"
@@ -272,21 +154,20 @@
                     stroke-linecap="round"
                   />
                 </svg>
-              </div>
+              </span>
               <h3>Aquí y ahora</h3>
               <p>
                 Trabajamos con lo que surge en el presente, con las emociones y
                 sensaciones que aparecen en cada momento.
               </p>
-            </div>
-            <div class="tarjeta revelar">
-              <div class="tarjeta-icono">
+            </article>
+            <article class="filosofia-item revelar">
+              <span class="filosofia-icono">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
-                  role="img"
                 >
                   <path
                     d="M4 12c2.5-5 7.5-5 8-5s5.5 0 8 5c-2.5 5-7.5 5-8 5s-5.5 0-8-5z"
@@ -315,21 +196,20 @@
                     stroke-linecap="round"
                   />
                 </svg>
-              </div>
+              </span>
               <h3>Conciencia emocional</h3>
               <p>
                 La terapia Gestalt te ayuda a tomar conciencia de tus patrones y
                 a resignificar tus experiencias.
               </p>
-            </div>
-            <div class="tarjeta revelar">
-              <div class="tarjeta-icono tarjeta-icono--spiritual">
+            </article>
+            <article class="filosofia-item revelar">
+              <span class="filosofia-icono">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
-                  role="img"
                 >
                   <g fill="currentColor" opacity="0.14">
                     <path
@@ -355,41 +235,48 @@
                   />
                   <circle cx="8.2" cy="10.5" r="1.9" fill="currentColor" />
                 </svg>
-              </div>
+              </span>
               <h3>Atención online</h3>
               <p>
                 Sesiones virtuales desde cualquier lugar, con la misma calidez y
                 compromiso de un encuentro presencial.
               </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="seccion seccion-destacada">
-        <div class="contenedor texto-centrado revelar">
-          <h2>¿Cómo solicito un turno?</h2>
-          <div class="pasos">
-            <div class="paso">
-              <span class="paso-numero">1</span>
-              <p>Tocá el botón de WhatsApp y enviame un mensaje</p>
-            </div>
-            <div class="paso">
-              <span class="paso-numero">2</span>
-              <p>Coordinamos el día y el horario que te quede cómodo</p>
-            </div>
-            <div class="paso">
-              <span class="paso-numero">3</span>
-              <p>Te confirmo la sesión por el mismo medio</p>
+        <div class="contenedor">
+          <div class="cabecera-seccion cabecera-centrada">
+            <div>
+              <p class="etiqueta">Cómo empezar</p>
+              <h2>¿Cómo solicito un turno?</h2>
             </div>
           </div>
-          <a
-            href="https://wa.me/5493515920391?text=Hola%20Marcela%2C%20quiero%20solicitar%20un%20turno."
-            class="boton boton-primario mt-3"
-            target="_blank"
-            rel="noopener"
-            >Solicitar turno por WhatsApp</a
-          >
+          <ol class="pasos" data-stagger>
+            <li class="paso revelar">
+              <span class="paso-numero">1</span>
+              <p>Tocá el botón de WhatsApp y enviame un mensaje</p>
+            </li>
+            <li class="paso revelar">
+              <span class="paso-numero">2</span>
+              <p>Coordinamos el día y el horario que te quede cómodo</p>
+            </li>
+            <li class="paso revelar">
+              <span class="paso-numero">3</span>
+              <p>Te confirmo la sesión por el mismo medio</p>
+            </li>
+          </ol>
+          <div class="pasos-cta">
+            <a
+              href="https://wa.me/5493515920391?text=Hola%20Marcela%2C%20quiero%20solicitar%20un%20turno."
+              class="boton boton-primario"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Solicitar turno por WhatsApp</a
+            >
+          </div>
         </div>
       </section>
     </main>
@@ -399,7 +286,7 @@
         <p>© 2026 Lic. Marcela Rolón · Psicóloga Clínica Gestalt · Mat. 3204</p>
         <p class="texto-suave">Atención online · Córdoba, Argentina</p>
         <p class="texto-suave mt-1">
-          <a href="#privacidad">Política de Privacidad</a>
+          <a href="/contacto#privacidad">Política de Privacidad</a>
         </p>
       </div>
     </footer>

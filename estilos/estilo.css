@@ -709,7 +709,7 @@ body.menu-abierto .menu-toggle span:nth-child(3) {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: var(--espacio-6);
-  align-items: start;
+  align-items: stretch;
 }
 
 .servicio-info h2 {

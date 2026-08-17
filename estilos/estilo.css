@@ -224,6 +224,7 @@ em { font-style: italic; }
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  background-color: var(--color-fondo);
   box-shadow: var(--sombra);
 }
 
@@ -408,6 +409,7 @@ body.menu-abierto .menu-toggle span:nth-child(3) { transform: translateY(-7px) r
   width: 58%;
   height: auto;
   border-radius: 50%;
+  background-color: var(--color-fondo);
 }
 
 /* ==========================================================
@@ -505,6 +507,7 @@ body.menu-abierto .menu-toggle span:nth-child(3) { transform: translateY(-7px) r
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  background-color: var(--color-fondo);
 }
 
 .marcela-credito {

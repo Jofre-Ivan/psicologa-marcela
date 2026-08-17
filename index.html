@@ -15,9 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/estilos/base.css" />
-    <link rel="stylesheet" href="/estilos/componentes.css" />
-    <link rel="stylesheet" href="/estilos/layout.css" />
+    <link rel="stylesheet" href="/estilos/estilo.css" />
     <link rel="icon" type="image/png" href="/logo.png" />
   </head>
 
@@ -57,7 +55,9 @@
       <section class="hero">
         <div class="contenedor hero-container">
           <div class="hero-texto">
-            <p class="etiqueta hero-entrada">Psicología Clínica Gestalt · Mat. 3204</p>
+            <p class="etiqueta hero-entrada">
+              Psicología Clínica Gestalt · Mat. 3204
+            </p>
             <h1 class="hero-split">
               Un espacio para<br /><em>encontrarte</em>
             </h1>
@@ -95,159 +95,59 @@
         </div>
       </section>
 
-      <section class="seccion" id="enfoque">
+      <section class="seccion" id="sobre-marcela">
         <div class="contenedor">
-          <header class="enfoque-cabecera">
-            <p class="etiqueta">El enfoque</p>
-            <h2>Sobre el enfoque</h2>
-            <p class="enfoque-intro">
-              Tres principios de la terapia Gestalt que atraviesan cada encuentro.
-            </p>
-          </header>
-
-          <ul class="enfoque-lista" data-stagger>
-            <li class="enfoque-item revelar">
-              <span class="enfoque-numero" aria-hidden="true">01</span>
-              <div class="enfoque-cuerpo">
-                <h3>Aquí y ahora</h3>
-                <p>
-                  Trabajamos con lo que surge en el presente, con las emociones
-                  y sensaciones que aparecen en cada momento.
-                </p>
+          <div class="marcela-grid">
+            <div class="marcela-retrato revelar">
+              <div class="marcela-marco">
+                <img
+                  src="/marce.jpg"
+                  alt=""
+                  width="1024"
+                  height="1024"
+                  class="marcela-img"
+                  loading="lazy"
+                />
               </div>
-              <span class="enfoque-icono" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <p class="marcela-credito">Lic. Marcela Rolón · Mat. 3204</p>
+            </div>
+            <div class="marcela-texto">
+              <p class="etiqueta revelar">Sobre Mi</p>
+              <h2 class="revelar">
+                Más de diez años<br />acompañando procesos de cambio
+              </h2>
+              <p class="marcela-intro revelar">
+                Soy Licenciada en Psicología por la
+                <strong>Universidad Nacional de Córdoba</strong> y, desde hace
+                más de <strong>diez años</strong>, acompaño procesos
+                terapéuticos desde el enfoque Gestalt: un espacio donde lo que
+                te pasa encuentra escucha, tiempo y presencia.
+              </p>
+              <dl class="marcela-datos" data-stagger>
+                <div class="marcela-dato revelar">
+                  <dt>Experiencia</dt>
+                  <dd>+10 años de práctica clínica</dd>
+                </div>
+                <div class="marcela-dato revelar">
+                  <dt>Formación</dt>
+                  <dd>Lic. en Psicología · Universidad Nacional de Córdoba</dd>
+                </div>
+                <div class="marcela-dato revelar">
+                  <dt>Enfoque</dt>
+                  <dd>Terapia Gestalt</dd>
+                </div>
+                <div class="marcela-dato revelar">
+                  <dt>Modalidad</dt>
+                  <dd>Atención online · Córdoba, Argentina</dd>
+                </div>
+              </dl>
+              <p class="marcela-enlace revelar">
+                <a href="/servicios"
+                  >Conocé cómo trabajo <span aria-hidden="true">→</span></a
                 >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="7.25"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="2.5"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                  <path
-                    d="M12 4.5v1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M12 18v1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M4.5 12h1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M18 12h1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-            </li>
-            <li class="enfoque-item revelar">
-              <span class="enfoque-numero" aria-hidden="true">02</span>
-              <div class="enfoque-cuerpo">
-                <h3>Conciencia emocional</h3>
-                <p>
-                  La terapia Gestalt te ayuda a tomar conciencia de tus patrones
-                  y a resignificar tus experiencias.
-                </p>
-              </div>
-              <span class="enfoque-icono" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 12c2.5-5 7.5-5 8-5s5.5 0 8 5c-2.5 5-7.5 5-8 5s-5.5 0-8-5z"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="2.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M12 8.5v1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M12 14.5v1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-            </li>
-            <li class="enfoque-item revelar">
-              <span class="enfoque-numero" aria-hidden="true">03</span>
-              <div class="enfoque-cuerpo">
-                <h3>Atención online</h3>
-                <p>
-                  Sesiones virtuales desde cualquier lugar, con la misma calidez
-                  y compromiso de un encuentro presencial.
-                </p>
-              </div>
-              <span class="enfoque-icono" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g fill="currentColor" opacity="0.14">
-                    <path
-                      d="M12 13s-2.5-2.5-4-4c1 0 2-1 4-1s3 1 4 1c-1.5 1.5-4 4-4 4z"
-                    />
-                    <path
-                      d="M12 11s1.5-1.5 2.5-2.5C14 8 13 7.5 12 8s-2 .5-2.5 .5C10.5 9.5 12 11 12 11z"
-                    />
-                  </g>
-                  <rect
-                    x="3.8"
-                    y="6.8"
-                    width="11"
-                    height="7.4"
-                    rx="1.2"
-                    stroke="currentColor"
-                    stroke-width="1.2"
-                    fill="none"
-                  />
-                  <path
-                    d="M16.8 8.6l2 1.05v2.7l-2 1.05V8.6z"
-                    fill="currentColor"
-                  />
-                  <circle cx="8.2" cy="10.5" r="1.9" fill="currentColor" />
-                </svg>
-              </span>
-            </li>
-          </ul>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

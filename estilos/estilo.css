@@ -713,7 +713,7 @@ body.menu-abierto .menu-toggle span:nth-child(3) {
 }
 
 .servicio-info h2 {
-  margin-bottom: var(--espacio-3);
+  margin-bottom: var(--espacio-2);
 }
 .servicio-info > p {
   color: var(--color-texto-suave);
